@@ -20,7 +20,7 @@ public class PedidoController {
     @PostMapping
     public ResponseEntity<PedidoModel> salvar(@RequestBody PedidoModel pedidoModel) {
         PedidoModel request = pedidoService.criar(pedidoModel);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/livros/{id}").buildAndExpand(request.getId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/pedidos/{id}").buildAndExpand(request.getId()).toUri();
         return ResponseEntity.created(uri).body(request);
     }
 
